@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
      const checkoutSession = await stripe.checkout.sessions.create({
         success_url: successUrl,
         cancel_url: cancelUrl,
-        mode: 'payment',
+        mode: 'subscription',
         line_items: [
             {
                 price: priceId,
